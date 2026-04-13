@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Draupnir Global GmbH â Strategic Holding Company, Zug, Switzerland</title>
+<title>Draupnir Global GmbH — Strategic Holding Company, Zug, Switzerland</title>
 <meta name="description" content="Draupnir Global GmbH is a Swiss holding company headquartered in Zug. Strategic investments across precious metals, advisory, and technology. Forged in wisdom. Multiplied by design.">
-<meta property="og:title" content="Draupnir Global GmbH â Strategic Holding, Zug">
+<meta property="og:title" content="Draupnir Global GmbH — Strategic Holding, Zug">
 <meta property="og:description" content="Swiss holding company. Precious metals, strategic advisory, technology. Forged in wisdom. Multiplied by design.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://draupnirglobal.com">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='16' cy='16' r='14' fill='none' stroke='%23C5A55A' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%23C5A55A'/%3E%3C/svg%3E">
 <style>
-  /* ââ Reset ââ */
+  /* ── Reset ── */
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-  /* ââ Variables ââ */
+  /* ── Variables ── */
   :root {
     --black: #0A0A0A;
     --black-light: #111111;
@@ -31,7 +31,7 @@
     --section-padding: 120px 0;
   }
 
-  /* ââ Base ââ */
+  /* ── Base ── */
   html { scroll-behavior: smooth; }
   body {
     background: var(--black);
@@ -49,7 +49,7 @@
     padding: 0 40px;
   }
 
-  /* ââ Navigation ââ */
+  /* ── Navigation ── */
   nav {
     position: fixed;
     top: 0;
@@ -73,7 +73,8 @@
     gap: 14px;
     text-decoration: none;
   }
-  .nav-logo svg { width: 36px; height: 18px; }
+  .nav-logo svg { width: 36px; height: 18px; display: none; }
+  .nav-logo img { height: 36px; width: auto; }
   .nav-logo span {
     color: var(--gold);
     font-size: 14px;
@@ -96,7 +97,7 @@
   }
   .nav-links a:hover { color: var(--cream); }
 
-  /* ââ Hero ââ */
+  /* ── Hero ── */
   .hero {
     min-height: 100vh;
     display: flex;
@@ -119,8 +120,8 @@
     opacity: 0.3;
   }
   .hero-logo { margin-bottom: 48px; opacity: 0.85; }
-  .hero-logo { margin-bottom: 24px; }
-  .hero-logo img { display: block; }
+  .hero-logo svg { width: 280px; height: 140px; display: none; }
+  .hero-logo img { width: 320px; height: auto; }
   .hero h1 {
     font-size: 48px;
     font-weight: 400;
@@ -143,7 +144,7 @@
     font-family: var(--font-sans);
   }
 
-  /* ââ Section base ââ */
+  /* ── Section base ── */
   section {
     padding: var(--section-padding);
     border-top: 1px solid var(--grey-border);
@@ -170,7 +171,7 @@
     font-size: 17px;
   }
 
-  /* ââ About ââ */
+  /* ── About ── */
   .about-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -178,7 +179,7 @@
     align-items: start;
   }
 
-  /* ââ Companies ââ */
+  /* ── Companies ── */
   .companies-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -219,7 +220,7 @@
     max-width: 100%;
   }
 
-  /* ââ Philosophy ââ */
+  /* ── Philosophy ── */
   .philosophy-content {
     max-width: 720px;
   }
@@ -234,7 +235,7 @@
     opacity: 0.85;
   }
 
-  /* ââ Contact ââ */
+  /* ── Contact ── */
   .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -258,7 +259,7 @@
   }
   .contact-info a:hover { color: var(--gold-hover); }
 
-  /* ââ Footer ââ */
+  /* ── Footer ── */
   footer {
     border-top: 1px solid var(--grey-border);
     padding: 40px 0;
@@ -275,7 +276,7 @@
     font-family: var(--font-sans);
   }
 
-  /* ââ Divider ââ */
+  /* ── Divider ── */
   .divider {
     width: 40px;
     height: 1px;
@@ -284,12 +285,12 @@
     margin: 32px 0;
   }
 
-  /* ââ Responsive ââ */
+  /* ── Responsive ── */
   @media (max-width: 768px) {
     .container { padding: 0 24px; }
     .hero h1 { font-size: 28px; letter-spacing: 6px; }
     .hero .tagline { font-size: 15px; }
-    .hero-logo img { max-width: 340px !important; }
+    .hero-logo img { width: 220px; }
     .about-content,
     .companies-grid,
     .contact-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -306,7 +307,7 @@
     .company-card { padding: 32px 24px; }
   }
 
-  /* ââ Animations ââ */
+  /* ── Animations ── */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
@@ -326,15 +327,7 @@
 <nav>
   <div class="container">
     <a href="#" class="nav-logo">
-      <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <filter id="nav-glow"><feGaussianBlur stdDeviation="1.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-        </defs>
-        <path d="M 200 100 C 200 60, 260 40, 300 40 C 340 40, 380 65, 380 100 C 380 135, 340 160, 300 160 C 260 160, 200 140, 200 100 C 200 60, 140 40, 100 40 C 60 40, 20 65, 20 100 C 20 135, 60 160, 100 160 C 140 160, 200 140, 200 100 Z" fill="none" stroke="#C5A55A" stroke-width="3" filter="url(#nav-glow)"/>
-        <path d="M 170 100 Q 185 78, 200 78 Q 215 78, 230 100 Q 215 122, 200 122 Q 185 122, 170 100 Z" fill="none" stroke="#C5A55A" stroke-width="2"/>
-        <circle cx="200" cy="100" r="11" fill="none" stroke="#C5A55A" stroke-width="1.5"/>
-        <circle cx="200" cy="100" r="5" fill="#C5A55A"/>
-      </svg>
+      <img src="logo-hero.png" alt="Draupnir Global">
       <span>DRAUPNIR GLOBAL</span>
     </a>
     <ul class="nav-links">
@@ -349,9 +342,11 @@
 <!-- Hero -->
 <section class="hero">
   <div class="hero-logo fade-up">
-    <img src="logo.png" alt="Draupnir Global — Forged in wisdom. Multiplied by design." width="480" height="480" style="max-width: 480px; width: 100%; height: auto;">
+    <img src="logo-hero.png" alt="Draupnir Global — Forged in Wisdom">
   </div>
-  <p class="subtitle fade-up delay-1">Strategic holding company &mdash; Zug, Switzerland</p>
+  <h1 class="fade-up delay-1">Draupnir Global</h1>
+  <p class="tagline fade-up delay-2">Forged in wisdom. Multiplied by design.</p>
+  <p class="subtitle fade-up delay-3">Strategic holding company &mdash; Zug, Switzerland</p>
 </section>
 
 <!-- About -->
