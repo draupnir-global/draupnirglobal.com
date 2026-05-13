@@ -1,296 +1,644 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Draupnir Global GmbH — Holding Company, Zug, Switzerland</title>
-<meta name="description" content="Draupnir Global GmbH is a Swiss holding company headquartered in Zug. Precious metals, international trade, and digital assets. Forged in wisdom. Multiplied by design.">
-<meta property="og:title" content="Draupnir Global GmbH — Holding Company, Zug">
-<meta property="og:description" content="Swiss holding company. Precious metals, international trade, digital assets. Forged in wisdom. Multiplied by design.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://draupnirglobal.com">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='16' cy='16' r='14' fill='none' stroke='%23C5A55A' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%23C5A55A'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-  :root {
-    --black: #0A0A0A;
-    --card: #111111;
-    --gold: #C5A55A;
-    --gold-hover: #D4B76A;
-    --cream: #F5F0E8;
-    --grey: #888888;
-    --grey-dark: #555555;
-    --border: #1A1A1A;
-    --font-serif: 'Crimson Text', Georgia, serif;
-    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-mono: 'IBM Plex Mono', monospace;
-  }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    background: var(--black);
-    color: var(--cream);
-    font-family: var(--font-sans);
-    font-size: 16px;
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  a { color: var(--gold); text-decoration: none; transition: color 0.2s; }
-  a:hover { color: var(--gold-hover); }
-
-  .container { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
-
-  /* NAV */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: rgba(10, 10, 10, 0.92);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-    height: 64px;
-  }
-  nav .container {
-    display: flex; align-items: center; justify-content: space-between; height: 100%;
-  }
-  .nav-logo {
-    display: flex; align-items: center; gap: 14px; text-decoration: none;
-  }
-  .nav-logo img { height: 32px; width: auto; }
-  .nav-logo span {
-    color: var(--gold); font-family: var(--font-mono);
-    font-size: 12px; letter-spacing: 3px; font-weight: 500;
-  }
-  .nav-links { display: flex; gap: 32px; list-style: none; }
-  .nav-links a {
-    color: var(--grey); font-size: 13px; font-weight: 500;
-    letter-spacing: 0.3px; transition: color 0.2s;
-  }
-  .nav-links a:hover { color: var(--gold); }
-
-  /* HERO */
-  .hero {
-    display: flex; flex-direction: column; align-items: center;
-    text-align: center; padding: 120px 40px 60px; margin-top: 64px;
-    background: linear-gradient(180deg, var(--black) 0%, var(--card) 100%);
-  }
-  .hero-logo { margin-bottom: 28px; }
-  .hero-logo img { width: 240px; height: auto; opacity: 0.9; }
-  .hero h1 {
-    font-family: var(--font-serif); font-size: 44px; font-weight: 600;
-    color: var(--gold); letter-spacing: 6px; text-transform: uppercase;
-    margin-bottom: 16px;
-  }
-  .hero .tagline {
-    font-family: var(--font-serif); font-size: 20px; font-style: italic;
-    color: var(--grey); letter-spacing: 2px; margin-bottom: 12px;
-  }
-  .hero .subtitle {
-    font-family: var(--font-mono); font-size: 12px; font-weight: 500;
-    color: var(--grey-dark); letter-spacing: 1px; text-transform: uppercase;
-  }
-
-  /* SECTIONS */
-  .section {
-    padding: 50px 0 40px;
-  }
-  .section-label {
-    font-family: var(--font-mono); font-size: 11px; font-weight: 500;
-    letter-spacing: 1.5px; color: var(--gold); text-transform: uppercase;
-    margin-bottom: 16px;
-  }
-  .section h2 {
-    font-family: var(--font-serif); font-size: 32px; font-weight: 600;
-    color: var(--cream); margin-bottom: 16px; letter-spacing: 0.5px;
-  }
-  .section h2.gold { color: var(--gold); }
-  .section-intro {
-    font-size: 17px; color: var(--grey); line-height: 1.8;
-    max-width: 720px; margin-bottom: 30px;
-  }
-
-  /* CARDS */
-  .card-grid-2 {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 30px;
-  }
-  .card-grid-3 {
-    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 30px;
-  }
-  .card {
-    background: var(--card); border: 1px solid var(--border);
-    padding: 36px; border-radius: 2px; transition: border-color 0.2s;
-  }
-  .card:hover { border-color: rgba(197, 165, 90, 0.3); }
-  .card h3 {
-    font-family: var(--font-serif); font-size: 20px; font-weight: 600;
-    color: var(--cream); margin-bottom: 6px;
-  }
-  .card .card-type {
-    font-family: var(--font-mono); font-size: 11px; font-weight: 500;
-    color: var(--gold); letter-spacing: 1px; text-transform: uppercase;
-    margin-bottom: 14px;
-  }
-  .card p {
-    font-size: 15px; color: var(--grey); line-height: 1.7;
-  }
-
-  /* CONTACT */
-  .contact {
-    padding: 40px 0; text-align: center;
-  }
-  .contact h2 {
-    font-family: var(--font-serif); font-size: 28px; font-weight: 600;
-    margin-bottom: 24px;
-  }
-  .contact-block {
-    font-size: 16px; color: var(--grey); line-height: 1.9;
-  }
-  .contact-block strong { color: var(--cream); font-weight: 600; }
-  .contact-email {
-    font-size: 18px; color: var(--gold); font-weight: 500; margin-top: 16px;
-  }
-
-  /* FOOTER */
-  footer {
-    border-top: 1px solid var(--border); padding: 30px 0; text-align: center;
-  }
-  footer p {
-    font-family: var(--font-mono); font-size: 11px; letter-spacing: 1px;
-    color: var(--grey-dark);
-  }
-
-  /* RESPONSIVE */
-  @media (max-width: 768px) {
-    .container { padding: 0 24px; }
-    .hero h1 { font-size: 28px; letter-spacing: 4px; }
-    .hero-logo img { width: 180px; }
-    .card-grid-2, .card-grid-3 { grid-template-columns: 1fr; }
-    .nav-links { gap: 20px; }
-    .nav-links a { font-size: 11px; }
-  }
-  @media (max-width: 480px) {
-    .nav-logo span { display: none; }
-    .nav-links { gap: 14px; }
-    .hero { padding: 100px 20px 40px; }
-    .hero h1 { font-size: 22px; letter-spacing: 3px; }
-    .card { padding: 28px; }
-  }
-
-  /* ANIMATIONS */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(16px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  .fade-up { animation: fadeUp 0.6s ease-out forwards; opacity: 0; }
-  .fade-up.d1 { animation-delay: 0.1s; }
-  .fade-up.d2 { animation-delay: 0.2s; }
-  .fade-up.d3 { animation-delay: 0.3s; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Draupnir Global GmbH — Swiss holding company headquartered in Lugano. A portfolio of operating companies built for long-term value.">
+  <meta name="theme-color" content="#0F1419">
+  <meta property="og:title" content="Draupnir Global | Forged in wisdom. Multiplied by design.">
+  <meta property="og:description" content="Swiss holding company headquartered in Lugano. A portfolio of operating companies built for long-term value.">
+  <meta property="og:url" content="https://draupnirglobal.com">
+  <meta property="og:type" content="website">
+  <title>Draupnir Global | Forged in wisdom. Multiplied by design.</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --black: #0F1419;
+      --black-card: #1A1F2E;
+      --text: #E8E8E8;
+      --text-dim: #8A8F9A;
+      --gold: #D4AF37;
+      --gold-hover: #E5C252;
+      --steel: #4A6FA5;
+      --border: #222836;
+      --font-serif: 'Crimson Text', Georgia, serif;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      background-color: var(--black);
+      color: var(--text);
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    
+    a {
+      color: var(--gold);
+      text-decoration: none;
+      transition: color 200ms ease-out;
+    }
+    
+    a:hover {
+      color: var(--gold-hover);
+    }
+    
+    h1, h2, h3 {
+      font-family: var(--font-serif);
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: 0.5px;
+    }
+    
+    h1 { font-size: 56px; }
+    h2 { font-size: 36px; margin: 20px 0 20px 0; }
+    h3 { font-size: 24px; }
+    
+    p {
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+    
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+    
+    /* NAVIGATION */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background-color: rgba(15, 20, 25, 0.95);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      z-index: 1000;
+      backdrop-filter: blur(8px);
+    }
+    
+    nav .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-serif);
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+      color: var(--text);
+    }
+    
+    nav .logo svg {
+      width: 32px;
+      height: 40px;
+    }
+    
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 40px;
+      align-items: center;
+    }
+    
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      color: var(--text);
+      transition: color 200ms ease-out;
+    }
+    
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+    
+    /* HERO */
+    .hero {
+      min-height: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--black) 0%, var(--black-card) 100%);
+      position: relative;
+      overflow: hidden;
+      margin-top: 60px;
+      padding: 50px 0 40px;
+    }
+    
+    .hero .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      width: 100%;
+      padding: 0 60px;
+    }
+    
+    .hero-left h1 {
+      margin-bottom: 30px;
+      font-size: 56px;
+      letter-spacing: 2px;
+    }
+    
+    .hero-left .tagline {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 22px;
+      color: var(--gold);
+      margin-bottom: 24px;
+      line-height: 1.4;
+      max-width: 500px;
+    }
+    
+    .hero-left p {
+      font-size: 18px;
+      color: var(--text-dim);
+      margin-bottom: 40px;
+      line-height: 1.8;
+      max-width: 500px;
+    }
+    
+    .hero-detail {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: 30px;
+    }
+    
+    .hero-right {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .hero-right svg {
+      width: 320px;
+      height: 380px;
+      filter: drop-shadow(0 20px 40px rgba(212, 175, 55, 0.1));
+      animation: rotate-slow 60s linear infinite;
+    }
+    
+    @keyframes rotate-slow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    
+    /* ABOUT */
+    .about {
+      padding: 28px 0 18px;
+      background-color: var(--black);
+    }
+    
+    .section-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+    
+    .about-prose {
+      max-width: 760px;
+    }
+    
+    .about-prose p {
+      font-size: 18px;
+      line-height: 1.8;
+      color: var(--text-dim);
+      margin-bottom: 24px;
+    }
+    
+    .about-prose p:first-of-type {
+      color: var(--text);
+    }
+    
+    /* COMPANIES */
+    .companies {
+      padding: 18px 0;
+      background-color: var(--black);
+    }
+    
+    .companies-intro {
+      max-width: 760px;
+      margin-bottom: 28px;
+    }
+    
+    .companies-intro p {
+      font-size: 17px;
+      color: var(--text-dim);
+      line-height: 1.8;
+    }
+    
+    .companies-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+    
+    .companies-grid.single {
+      grid-template-columns: 1fr;
+      max-width: 720px;
+    }
+    
+    .company-card {
+      background-color: var(--black-card);
+      border: 1px solid var(--border);
+      padding: 40px;
+      border-radius: 2px;
+      transition: all 200ms ease-out;
+    }
+    
+    .company-card:hover {
+      border-color: var(--gold);
+      background-color: rgba(212, 175, 55, 0.02);
+    }
+    
+    .company-card h3 {
+      color: var(--text);
+      margin-bottom: 8px;
+      font-size: 22px;
+      font-family: var(--font-serif);
+      font-weight: 600;
+    }
+    
+    .company-subtitle {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--gold);
+      margin-bottom: 18px;
+    }
+    
+    .company-card p {
+      color: var(--text-dim);
+      font-size: 15px;
+      line-height: 1.7;
+      margin-bottom: 18px;
+    }
+    
+    .company-card .card-link {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.5px;
+      color: var(--gold);
+    }
+    
+    .company-card .card-status {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.5px;
+      color: var(--text-dim);
+      font-style: italic;
+    }
+    
+    /* PHILOSOPHY */
+    .philosophy {
+      padding: 24px 0;
+      background-color: var(--black);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .philosophy .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      max-width: 1100px;
+    }
+    
+    .philosophy h2 {
+      grid-column: 1 / -1;
+      margin-bottom: 30px;
+      color: var(--gold);
+    }
+    
+    .philosophy-column h3 {
+      font-size: 20px;
+      margin-bottom: 15px;
+      color: var(--text);
+    }
+    
+    .philosophy-column p {
+      color: var(--text-dim);
+      line-height: 1.8;
+      font-size: 15px;
+    }
+    
+    /* CONTACT */
+    .contact {
+      padding: 24px 0 20px;
+      background-color: var(--black);
+      text-align: center;
+    }
+    
+    .contact h2 {
+      font-size: 28px;
+      margin-bottom: 40px;
+    }
+    
+    .contact-block {
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.9;
+      color: var(--text-dim);
+      margin-bottom: 30px;
+    }
+    
+    .contact-block strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+    
+    .contact-email {
+      font-size: 18px;
+      color: var(--gold);
+      font-weight: 500;
+      margin-top: 20px;
+    }
+    
+    .contact-phone {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      color: var(--text-dim);
+      letter-spacing: 0.5px;
+      margin-top: 8px;
+    }
+    
+    /* FOOTER */
+    footer {
+      background-color: var(--black-card);
+      border-top: 1px solid var(--border);
+      padding: 24px 0;
+      text-align: center;
+    }
+    
+    footer p {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-dim);
+      margin: 0;
+    }
+    
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero .container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 0 30px;
+      }
+      
+      .hero-left h1 {
+        font-size: 36px;
+      }
+      
+      .hero-left .tagline {
+        font-size: 18px;
+      }
+      
+      .hero-right svg {
+        width: 240px;
+        height: 280px;
+      }
+      
+      .companies-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .philosophy .container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      
+      h1 { font-size: 36px; }
+      h2 { font-size: 28px; }
+      
+      .nav-links {
+        gap: 20px;
+        font-size: 12px;
+      }
+      
+      nav {
+        padding: 0 20px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      body {
+        font-size: 15px;
+      }
+      
+      h1 { font-size: 28px; }
+      h2 { font-size: 22px; }
+      
+      nav {
+        height: 50px;
+        padding: 0 15px;
+      }
+      
+      .nav-links {
+        gap: 12px;
+        font-size: 11px;
+      }
+      
+      .hero {
+        margin-top: 50px;
+      }
+      
+      .hero .container {
+        padding: 0 20px;
+        gap: 30px;
+      }
+      
+      .hero-left .tagline {
+        font-size: 17px;
+      }
+      
+      .hero-left p {
+        font-size: 16px;
+      }
+      
+      .hero-right svg {
+        width: 180px;
+        height: 210px;
+      }
+      
+      .container {
+        padding: 0 20px;
+      }
+      
+      .about, .companies, .philosophy, .contact {
+        padding: 40px 0;
+      }
+      
+      .company-card {
+        padding: 30px;
+      }
+    }
+  </style>
 </head>
 <body>
-
-<!-- NAV -->
-<nav>
-  <div class="container">
-    <a href="#" class="nav-logo">
-      <img src="logo-hero.png" alt="Draupnir Global">
-      <span>DRAUPNIR GLOBAL</span>
-    </a>
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="logo">
+      <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="60" r="36" fill="none" stroke="#D4AF37" stroke-width="3"/>
+        <circle cx="50" cy="60" r="28" fill="none" stroke="#D4AF37" stroke-width="1" opacity="0.5"/>
+        <circle cx="50" cy="60" r="8" fill="#D4AF37"/>
+      </svg>
+      DRAUPNIR GLOBAL
+    </div>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#companies">Companies</a></li>
-      <li><a href="#philosophy">Philosophy</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-  </div>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-logo fade-up">
-    <img src="logo-hero.png" alt="Draupnir Global">
-  </div>
-  <h1 class="fade-up d1">Draupnir Global</h1>
-  <p class="tagline fade-up d2">Forged in wisdom. Multiplied by design.</p>
-  <p class="subtitle fade-up d3">Holding company &mdash; Zug, Switzerland</p>
-</section>
-
-<!-- ABOUT -->
-<section id="about" class="section">
-  <div class="container">
-    <div class="section-label">About</div>
-    <h2>Built for generations</h2>
-    <p class="section-intro">Draupnir Global GmbH is a Swiss holding company headquartered in Zug. We build and steward a portfolio of operating companies across precious metals, international trade, and digital assets &mdash; guided by patience, precision, and long-term vision.</p>
-    <p class="section-intro">Named after Draupnir, the golden ring of Odin that multiplied eightfold with every cycle, our structure is designed for compounding value across generations. We bring together deep industry expertise with the strategic discipline of Swiss corporate governance.</p>
-  </div>
-</section>
-
-<!-- COMPANIES -->
-<section id="companies" class="section">
-  <div class="container">
-    <div class="section-label">Our companies</div>
-    <h2>The Sindri portfolio</h2>
-    <p class="section-intro">Named after Sindri, the master dwarf-smith who forged Draupnir and Mjolnir in the fires of Svartalfheim. Each company is crafted with the same precision.</p>
-    <div class="card-grid-2">
-      <div class="card">
-        <h3>Sindri Draupnir GmbH</h3>
-        <div class="card-type">Operations &middot; Zug</div>
-        <p>Primary operating entity for precious metals, international trade, and technology. The forge where value is created.</p>
+  </nav>
+  
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-left">
+        <h1>Draupnir Global</h1>
+        <p class="tagline">Forged in wisdom. Multiplied by design.</p>
+        <p>Strategic holding company &mdash; Lugano, Switzerland.</p>
+        <div class="hero-detail">VIA MAGGIO 1, 6900 LUGANO</div>
       </div>
-      <div class="card">
-        <h3>Sindri Digital GmbH</h3>
-        <div class="card-type">Digital assets &middot; Zug</div>
-        <p>Holds Bitcoin on our own balance sheet and produces institutional-grade blockchain forensics reports for private clients. Non-custodial. No financial intermediation. <a href="https://sindridigital.ch">Read more &rarr;</a></p>
+      <div class="hero-right">
+        <svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <filter id="glow-ring">
+              <feGaussianBlur stdDeviation="0.8" result="coloredBlur"/>
+              <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
+          <!-- Outer ring -->
+          <circle cx="100" cy="120" r="80" fill="none" stroke="#C5A55A" stroke-width="3" filter="url(#glow-ring)"/>
+          <!-- Inner concentric rings (8-fold multiplication motif) -->
+          <circle cx="100" cy="120" r="68" fill="none" stroke="#C5A55A" stroke-width="1" opacity="0.55"/>
+          <circle cx="100" cy="120" r="56" fill="none" stroke="#C5A55A" stroke-width="1" opacity="0.45"/>
+          <circle cx="100" cy="120" r="44" fill="none" stroke="#C5A55A" stroke-width="1" opacity="0.35"/>
+          <circle cx="100" cy="120" r="32" fill="none" stroke="#C5A55A" stroke-width="1" opacity="0.25"/>
+          <!-- 8 marker points around outer ring -->
+          <circle cx="100" cy="40" r="3" fill="#C5A55A" filter="url(#glow-ring)"/>
+          <circle cx="156.6" cy="63.4" r="3" fill="#C5A55A" opacity="0.85"/>
+          <circle cx="180" cy="120" r="3" fill="#C5A55A" filter="url(#glow-ring)"/>
+          <circle cx="156.6" cy="176.6" r="3" fill="#C5A55A" opacity="0.85"/>
+          <circle cx="100" cy="200" r="3" fill="#C5A55A" filter="url(#glow-ring)"/>
+          <circle cx="43.4" cy="176.6" r="3" fill="#C5A55A" opacity="0.85"/>
+          <circle cx="20" cy="120" r="3" fill="#C5A55A" filter="url(#glow-ring)"/>
+          <circle cx="43.4" cy="63.4" r="3" fill="#C5A55A" opacity="0.85"/>
+          <!-- Centre point -->
+          <circle cx="100" cy="120" r="6" fill="#C5A55A" filter="url(#glow-ring)"/>
+          <circle cx="100" cy="120" r="2" fill="#0F1419"/>
+        </svg>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- PHILOSOPHY -->
-<section id="philosophy" class="section">
-  <div class="container">
-    <div class="section-label">Philosophy</div>
-    <h2 class="gold">Forged, not assembled.</h2>
-    <div class="card-grid-3">
-      <div class="card">
+  </section>
+  
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="section-label">ABOUT</div>
+      <h2>Built for generations</h2>
+      <div class="about-prose">
+        <p>Draupnir Global GmbH is a Swiss holding company headquartered in Lugano. We build and steward a portfolio of operating companies guided by patience, precision, and long-term vision.</p>
+        <p>Named after Draupnir, the golden ring of Odin that multiplied eightfold with every cycle, our structure is designed for compounding value across generations.</p>
+        <p>Swiss corporate governance applied with the discipline of long-term operators.</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- COMPANIES -->
+  <section id="companies" class="companies">
+    <div class="container">
+      <div class="section-label">OUR COMPANIES</div>
+      <h2>The portfolio</h2>
+      <div class="companies-intro">
+        <p>Each operating company is held under Draupnir Global. We keep the structure small by design &mdash; depth in fewer places is more useful than presence in many.</p>
+      </div>
+      
+      <div class="companies-grid single">
+        <div class="company-card">
+          <h3>Sindri Draupnir GmbH</h3>
+          <div class="company-subtitle">Operations &middot; Lugano</div>
+          <p>The primary operating entity for advisory, hospitality, real estate operations, and cross-border growth between Europe and Latin America. Engagements are led by partners; teams are kept small by design.</p>
+          <a class="card-link" href="https://sindridraupnir.com" target="_blank" rel="noopener noreferrer">sindridraupnir.com &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- PHILOSOPHY -->
+  <section id="philosophy" class="philosophy">
+    <div class="container">
+      <div class="section-label" style="grid-column: 1 / -1;">PHILOSOPHY</div>
+      <h2>Forged, not assembled.</h2>
+      <div class="philosophy-column">
         <h3>Long-term thinking</h3>
-        <div class="card-type">Discipline</div>
-        <p>Every decision is weighed against its long-term consequence. Every partnership is chosen for endurance, not expediency. We build structures that outlast market cycles.</p>
+        <p>Every decision is weighed against its long-term consequence. We are discerning about who we work with, and slow to commit.</p>
       </div>
-      <div class="card">
+      <div class="philosophy-column">
         <h3>Precision over scale</h3>
-        <div class="card-type">Craft</div>
-        <p>Our companies are forged &mdash; not assembled. Built with the care of master craftsmen, designed to compound value with discipline and integrity. Quality of execution over speed of expansion.</p>
+        <p>Depth in fewer places is more useful than presence in many. Our companies are kept small by design and held for the long run.</p>
       </div>
-      <div class="card">
-        <h3>Traditional meets emerging</h3>
-        <div class="card-type">Bridge</div>
-        <p>From the precious metals markets of Latin America to the digital asset infrastructure of Switzerland, we build bridges between traditional value and emerging opportunity.</p>
+      <div class="philosophy-column">
+        <h3>Operators, not consultants</h3>
+        <p>Our companies are built and run by people with operating experience. Advice is grounded in the discipline of having done the work.</p>
+      </div>
+      <div class="philosophy-column">
+        <h3>Swiss governance</h3>
+        <p>The structure is Swiss by deliberate choice &mdash; for the predictability, the standards, and the time horizon it makes possible.</p>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="contact">
-  <div class="container">
-    <h2>Get in touch</h2>
-    <div class="contact-block">
-      <strong>Draupnir Global GmbH</strong><br>
-      Zug, Switzerland<br>
-      <div class="contact-email"><a href="mailto:info@draupnirglobal.com">info@draupnirglobal.com</a></div>
+  </section>
+  
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <div class="contact-block">
+        <strong>Draupnir Global GmbH</strong><br>
+        Lugano, Switzerland
+        <div class="contact-email" style="margin-top: 1.5em;"><a href="mailto:pb@draupnirglobal.com">pb@draupnirglobal.com</a> &mdash; Peder Johan Blak</div>
+        <div class="contact-email"><a href="mailto:jm@draupnirglobal.com">jm@draupnirglobal.com</a> &mdash; Juan Machado Sanchez</div>
+        <div class="contact-phone" style="margin-top: 1em;">+45 21 76 34 18</div>
+      </div>
     </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <p>&copy; 2026 Draupnir Global GmbH &mdash; Zug, Switzerland</p>
-</footer>
-
+  </section>
+  
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 Draupnir Global GmbH &nbsp;|&nbsp; Lugano &middot; Switzerland</p>
+  </footer>
 </body>
 </html>
